@@ -1,11 +1,9 @@
 # 스프링부트 + 스프링시큐리티 로그인 구현 (JPA, MariaDB, lombok)
-
 ## LoginController.java
 페이지 이동, 기능 호출과 관련된 처리를 한다.
 * /login : 로그인 페이지 이동
 * /signup : 가입 페이지 이동
 * /save : 사용자 저장
-
 
 ## LoginService.java, LoginRepository.java
 LoginRepository 인터페이스에서 JPA에서 상속받을 수 있는 JpaRepository 클래스를 설정해두었을 때 이와 관련된 다양한 CRUD 기능을 쓸 수 있다.
