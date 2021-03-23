@@ -3,6 +3,8 @@ package com.grlife.login.service;
 import com.grlife.login.domain.UserInfo;
 import com.grlife.login.repository.LoginRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,26 +15,30 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginService implements UserDetailsService {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     private final LoginRepository loginRepository;
 
     public Long save(UserInfo userInfo) {
+
+        logger.trace("Trace Level 테스트");
+        logger.debug("DEBUG Level 테스트");
+        logger.info("INFO Level 테스트");
+        logger.warn("Warn Level 테스트");
+        logger.error("ERROR Level 테스트");
+
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         userInfo.setPassword(encoder.encode(userInfo.getPassword()));
 
-        System.out.println("프린트%%%%");
-
-        Long t = loginRepository.save(UserInfo.builder()
+        return loginRepository.save(UserInfo.builder()
                 .email(userInfo.getEmail())
                 .auth(userInfo.getAuth())
                 .password(userInfo.getPassword()).build()).getCode();
-
-        System.out.println("프린트 : " + t);
-
-        return t;
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        return loginRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException((email)));
     }
 }
