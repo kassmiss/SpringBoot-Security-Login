@@ -15,6 +15,7 @@ LoginRepository 인터페이스에서 JPA에서 상속받을 수 있는 JpaRepos
 
 # 확인필요
 1. user_info 테이블의 생성 규칙은 어떻게 되는가? 고정인가? 아니면 도메인명에 따라 바뀌는가?
+- 도메인의 UserInfo 클래스가 있다. 해당 클래스의 명칭에 따라 테이블명 규칙이 변경된다. UserInfo -> user_info, UserData -> user_data
 2. build.gradle에서 필요없는 것은 삭제하자.
 3. 롤(Role)에 대해서는 어떻게 다루는건가?
 4. 
