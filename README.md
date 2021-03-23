@@ -5,7 +5,7 @@
 * /signup : 가입 페이지 이동
 * /save : 사용자 저장
 * /logout : 로그아웃
-  * 로그아웃 시 위와 같이 호출할 경우 기존 로그인정보가 해제된다.
+  * 로그아웃 시 아래와 같이 호출할 경우 기존 로그인정보가 해제된다.
 ```java
     @GetMapping(value = "/logout")
     public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
