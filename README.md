@@ -12,7 +12,7 @@
         return "redirect:/login";
     }
 ```
-  * 로그아웃 시 위와 같이 호출할 경우 기존 로그인정보가 해제된다.
+- 로그아웃 시 위와 같이 호출할 경우 기존 로그인정보가 해제된다.
 
 ## LoginService.java, LoginRepository.java
 LoginRepository 인터페이스에서 JPA에서 상속받을 수 있는 JpaRepository 클래스를 설정해두었을 때 이와 관련된 다양한 CRUD 기능을 쓸 수 있다.
