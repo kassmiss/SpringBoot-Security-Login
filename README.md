@@ -30,8 +30,8 @@ LoginRepository 인터페이스에서 JPA에서 상속받을 수 있는 JpaRepos
 CSRF 공격 방지용 (Cross Site Request Forgery)
 
 # 확인필요
-1. user_info 테이블의 생성 규칙은 어떻게 되는가? 고정인가? 아니면 도메인명에 따라 바뀌는가?
-- 도메인의 UserInfo 클래스가 있다. 해당 클래스의 명칭에 따라 테이블명 규칙이 변경된다. UserInfo -> user_info, UserData -> user_data
+* user_info 테이블의 생성 규칙은 어떻게 되는가? 고정인가? 아니면 도메인명에 따라 바뀌는가?
+  * 도메인의 UserInfo 클래스가 있다. 해당 클래스의 명칭에 따라 테이블명 규칙이 변경된다. UserInfo -> user_info, UserData -> user_data
 
 ## 참고
 https://codevang.tistory.com/282
